@@ -1,0 +1,84 @@
+{
+    "events": [
+    {
+        "event_id":1,
+        "name": "Metallica Concert",
+        "location": "Palace Grounds",
+        "paid": 1,
+        "amount": 500.00,
+        "image": "http://i.telegraph.co.uk/multimedia/archive/01292/metallica_1292216c.jpg"
+    },
+    {
+        "event_id":2,
+        "name": "Saree Exhibition",
+        "location": "Malleswaram Grounds",
+        "paid": 0,
+        "amount" : 0.00,
+        "image":"http://1.bp.blogspot.com/-ar3LsdcuGBc/UcJJ7T5rdRI/AAAAAAAABgE/ErTtbdKSIgo/s1600/kalamandir_sarees.jpg"
+    },
+    {
+        "event_id":3,
+        "name": "Wine tasting event",
+        "location": "Links Brewery",
+        "paid": 1,
+        "amount":199.00,
+        "image":"http://www.thenakedvine.com/wp-content/uploads/2013/10/winebottles.jpg"
+    },
+    {
+        "event_id":4,
+        "name": "Startups Meet",
+        "location": "Kanteerava Indoor Stadium",
+        "paid": 1,
+        "amount":350.00,
+        "image":"http://cdn.new-startups.com/wp-content/uploads/career-meets-life.jpg"
+    },
+    {
+        "event_id":5,
+        "name": "Summer Noon Party",
+        "location": "Kumara Park",
+        "paid": 1,
+        "amount":199.00,
+        "image":"http://artificed.files.wordpress.com/2010/04/img_8076_psdcopy.jpg"
+    },
+    {
+        "event_id":6,
+        "name": "Rock and Roll nights",
+        "location": "Sarjapur Road",
+        "paid": 1,
+        "amount":499.00,
+        "image":"http://pulseclimbing.com.au/wp-content/uploads/2012/11/iStock_000019658210_Small.jpg"
+    },
+    {
+        "event_id":7,
+        "name": "Barbecue Fridays",
+        "location": "Whitefield",
+        "paid": 1,
+        "amount":399.00,
+        "image":"http://images.alphacoders.com/210/210151.jpg"
+    },
+    {
+        "event_id":8,
+        "name": "Summer workshop",
+        "location": "Indiranagar",
+        "paid": 0,
+        "amount":0.00,
+        "image":"http://paflib.files.wordpress.com/2013/05/scan0001.jpg"
+    },
+    {
+        "event_id":9,
+        "name": "Impressions & Expressions",
+        "location": "MG Road",
+        "paid": 0,
+        "amount":0.00,
+        "image":"http://dhatoday.com/wp-content/uploads/2013/06/Designers-Lounge-Multi-Brand-Retail-Boutique-Opens-at-The-Ocean-Mall-Clifton-Karachi-3.jpg"
+    },
+    {
+        "event_id":10,
+        "name": "Italian carnival",
+        "location": "Electronic City",
+        "paid": 0,
+        "amount":0.00,
+        "image":"https://c1.staticflickr.com/3/2698/4537037571_8256d15a8f_z.jpg"
+    }
+    ]
+}
