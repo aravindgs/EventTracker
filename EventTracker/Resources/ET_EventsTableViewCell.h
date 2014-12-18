@@ -13,5 +13,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *eventName;
 @property (strong, nonatomic) IBOutlet UILabel *eventLocation;
 @property (strong, nonatomic) IBOutlet UILabel *entryStatus;
+@property (strong, nonatomic) IBOutlet UIButton *deleteButton;
 
 @end

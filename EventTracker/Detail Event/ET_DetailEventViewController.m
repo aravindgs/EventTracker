@@ -8,9 +8,12 @@
 
 #import "ET_DetailEventViewController.h"
 #import "AppDelegate.h"
-
+#import "ET_UserObject.h"
 
 @interface ET_DetailEventViewController ()
+{
+    ET_UserObject *user;
+}
 
 @property (nonatomic) AppDelegate *appDelegate;
 @property (strong, nonatomic) IBOutlet UIImageView *eventImage;
@@ -26,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    user = [ET_UserObject getInstance];
     _appDelegate = [[UIApplication sharedApplication] delegate];
     UIImage *image = [_appDelegate.imageCache objectForKey:_currentEvent.eventImageUrl];
     if(image){
@@ -78,7 +81,30 @@
 */
 - (IBAction)trackEventClicked
 {
-    
+    if ([self checkIfAlreadyAdded])
+    {
+        [[[UIAlertView alloc] initWithTitle:@"EVENVT ALREADY IN TRACKING" message:@"This event has already been added to your tracking list" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+    }
+    else
+    {
+        [user.trackingEvents addObject:_currentEvent];
+        [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:user.trackingEvents] forKey:user.name];
+        [[[UIAlertView alloc] initWithTitle:@"EVENT ADDED" message:@"This event has been added to your tracking list" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+    }
+}
+
+- (BOOL) checkIfAlreadyAdded
+{
+    for (int i=0; i<user.trackingEvents.count; i++)
+    {
+        ET_EventObject *temp = [[ET_EventObject alloc] init];
+        temp = [user.trackingEvents objectAtIndex:i];
+        if (temp.eventId == _currentEvent.eventId)
+        {
+            return YES;
+        }
+    }
+    return NO;
 }
 
 @end

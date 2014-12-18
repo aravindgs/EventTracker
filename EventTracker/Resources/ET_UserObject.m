@@ -10,4 +10,19 @@
 
 @implementation ET_UserObject
 
+static ET_UserObject *user;
+
++ (ET_UserObject *) getInstance
+{
+    @synchronized ([ET_UserObject class])
+    {
+        if (user == nil)
+        {
+            user = [[ET_UserObject alloc] init];
+            user.trackingEvents = [[NSMutableArray alloc] init];
+        }
+    }
+    return user;
+}
+
 @end

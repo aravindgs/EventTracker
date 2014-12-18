@@ -7,8 +7,12 @@
 //
 
 #import "ET_LoginViewController.h"
+#import "ET_UserObject.h"
 
 @interface ET_LoginViewController () <UITextFieldDelegate,UIAlertViewDelegate>
+{
+    ET_UserObject *user;
+}
 
 @property (strong, nonatomic) IBOutlet UITextField *nameField;
 @property (strong, nonatomic) IBOutlet UIButton *continueButton;
@@ -23,6 +27,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    user = [ET_UserObject getInstance];
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,6 +63,16 @@
     else
     {
         
+        NSMutableArray *trackedArray = [NSKeyedUnarchiver unarchiveObjectWithData:[[NSUserDefaults standardUserDefaults] objectForKey:_nameField.text]];
+        user.name = _nameField.text;
+        if (trackedArray)
+        {
+            user.trackingEvents = [trackedArray mutableCopy];
+        }
+        else
+        {
+            user.trackingEvents = [[NSMutableArray alloc] init];
+        }
         [self performSegueWithIdentifier:@"events" sender:_nameField.text];
     }
 }

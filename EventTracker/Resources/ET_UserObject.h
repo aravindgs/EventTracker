@@ -10,4 +10,9 @@
 
 @interface ET_UserObject : NSObject
 
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSMutableArray *trackingEvents;
+
++ (ET_UserObject *) getInstance;
+
 @end

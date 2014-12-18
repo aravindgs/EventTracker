@@ -12,8 +12,12 @@
 #import "ET_EventObject.h"
 #import "AppDelegate.h"
 #import "ET_DetailEventViewController.h"
+#import "ET_UserObject.h"
 
 @interface ET_ListingViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDataSource,UITableViewDelegate>
+{
+    ET_UserObject *user;
+}
 
 @property (nonatomic) NSMutableArray *eventObjectsArray;
 @property (strong, nonatomic) IBOutlet UICollectionView *eventGrid;
@@ -29,7 +33,7 @@
     // Do any additional setup after loading the view.
     self.navigationItem.hidesBackButton = YES;
     _appDelegate = [[UIApplication sharedApplication] delegate];
-    
+    user = [ET_UserObject getInstance];
     NSDictionary *eventsDataDictionary = [NSDictionary dictionaryWithDictionary:[self getEventListDictionary]];
     NSArray *eventDictionariesArray = [NSArray arrayWithArray:[eventsDataDictionary valueForKey:@"events"]];
     _eventObjectsArray = [[NSMutableArray alloc] init];
@@ -44,6 +48,16 @@
     _eventList.hidden = NO;
     
     
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    self.title = @"EVENTS";
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    self.title = @"";
 }
 
 - (void)didReceiveMemoryWarning

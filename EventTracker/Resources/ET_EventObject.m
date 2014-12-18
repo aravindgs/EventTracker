@@ -23,4 +23,27 @@
     return currentEvent;
 }
 
+- (void)encodeWithCoder:(NSCoder *)coder {
+    [coder encodeInt:_eventId forKey:@"event_id"];
+    [coder encodeObject:_eventImageUrl forKey:@"image"];
+    [coder encodeObject:_eventName forKey:@"name"];
+    [coder encodeObject:_location forKey:@"location"];
+    [coder encodeBool:_isPaidEvent forKey:@"is_paid"];
+    [coder encodeFloat:_entryFee forKey:@"fee"];
+}
+
+- (id)initWithCoder:(NSCoder *)coder {
+    self = [[ET_EventObject alloc] init];
+    if (self != nil)
+    {
+        _eventId = [coder decodeIntForKey:@"event_id"];
+        _eventImageUrl = [coder decodeObjectForKey:@"image"];
+        _eventName = [coder decodeObjectForKey:@"name"];
+        _location = [coder decodeObjectForKey:@"location"];
+        _isPaidEvent = [coder decodeBoolForKey:@"is_paid"];
+        _entryFee = [coder decodeFloatForKey:@"fee"];
+    }
+    return self;
+}
+
 @end

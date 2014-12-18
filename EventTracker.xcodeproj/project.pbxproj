@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F20C78DA1A430965002646A6 /* ET_TrackListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F20C78D91A430965002646A6 /* ET_TrackListViewController.m */; };
 		F28A84321A40A31700134F6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A84311A40A31700134F6D /* main.m */; };
 		F28A843B1A40A31700134F6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28A84391A40A31700134F6D /* Main.storyboard */; };
 		F28A843D1A40A31700134F6D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F28A843C1A40A31700134F6D /* Images.xcassets */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F20C78D81A430965002646A6 /* ET_TrackListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ET_TrackListViewController.h; sourceTree = "<group>"; };
+		F20C78D91A430965002646A6 /* ET_TrackListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ET_TrackListViewController.m; sourceTree = "<group>"; };
 		F28A842C1A40A31700134F6D /* EventTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F28A84301A40A31700134F6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F28A84311A40A31700134F6D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -80,6 +83,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F20C78D71A430949002646A6 /* TrackList */ = {
+			isa = PBXGroup;
+			children = (
+				F20C78D81A430965002646A6 /* ET_TrackListViewController.h */,
+				F20C78D91A430965002646A6 /* ET_TrackListViewController.m */,
+			);
+			path = TrackList;
+			sourceTree = "<group>";
+		};
 		F28A84231A40A31700134F6D = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +113,7 @@
 		F28A842E1A40A31700134F6D /* EventTracker */ = {
 			isa = PBXGroup;
 			children = (
+				F20C78D71A430949002646A6 /* TrackList */,
 				F2AC949D1A4229B50097E595 /* Detail Event */,
 				F2AC948B1A41F52D0097E595 /* Event Listing */,
 				F28A845D1A40A5DF00134F6D /* Login */,
@@ -299,6 +312,7 @@
 				F28A845B1A40A3CC00134F6D /* AppDelegate.m in Sources */,
 				F28A84321A40A31700134F6D /* main.m in Sources */,
 				F2AC94991A420F8A0097E595 /* ET_EventObject.m in Sources */,
+				F20C78DA1A430965002646A6 /* ET_TrackListViewController.m in Sources */,
 				F2AC94A01A4229CF0097E595 /* ET_DetailEventViewController.m in Sources */,
 				F2AC94961A420CBD0097E595 /* ET_EventsTableViewCell.m in Sources */,
 				F2AC948E1A41F53D0097E595 /* ET_ListingViewController.m in Sources */,
