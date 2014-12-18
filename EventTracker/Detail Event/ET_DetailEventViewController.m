@@ -13,6 +13,7 @@
 @interface ET_DetailEventViewController ()
 {
     ET_UserObject *user;
+    UISwipeGestureRecognizer *rightEndSwipe;
 }
 
 @property (nonatomic) AppDelegate *appDelegate;
@@ -65,6 +66,16 @@
     
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    self.title = _currentEvent.eventName;
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    self.title = @"";
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -90,6 +101,7 @@
         [user.trackingEvents addObject:_currentEvent];
         [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:user.trackingEvents] forKey:user.name];
         [[[UIAlertView alloc] initWithTitle:@"EVENT ADDED" message:@"This event has been added to your tracking list" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+        [self performSegueWithIdentifier:@"tracked" sender:nil];
     }
 }
 

@@ -17,6 +17,7 @@
 @interface ET_ListingViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDataSource,UITableViewDelegate>
 {
     ET_UserObject *user;
+    UISwipeGestureRecognizer *rightEndSwipe;
 }
 
 @property (nonatomic) NSMutableArray *eventObjectsArray;

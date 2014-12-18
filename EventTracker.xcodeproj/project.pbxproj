@@ -11,7 +11,6 @@
 		F28A84321A40A31700134F6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A84311A40A31700134F6D /* main.m */; };
 		F28A843B1A40A31700134F6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28A84391A40A31700134F6D /* Main.storyboard */; };
 		F28A843D1A40A31700134F6D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F28A843C1A40A31700134F6D /* Images.xcassets */; };
-		F28A84401A40A31700134F6D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F28A843E1A40A31700134F6D /* LaunchScreen.xib */; };
 		F28A844C1A40A31700134F6D /* EventTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A844B1A40A31700134F6D /* EventTrackerTests.m */; };
 		F28A845B1A40A3CC00134F6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A84571A40A3CC00134F6D /* AppDelegate.m */; };
 		F28A84601A40A5F100134F6D /* ET_LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F28A845F1A40A5F100134F6D /* ET_LoginViewController.m */; };
@@ -42,7 +41,6 @@
 		F28A84311A40A31700134F6D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F28A843A1A40A31700134F6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F28A843C1A40A31700134F6D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		F28A843F1A40A31700134F6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F28A84451A40A31700134F6D /* EventTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F28A844A1A40A31700134F6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F28A844B1A40A31700134F6D /* EventTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventTrackerTests.m; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 				F28A845A1A40A3CC00134F6D /* Resources */,
 				F28A84391A40A31700134F6D /* Main.storyboard */,
 				F28A843C1A40A31700134F6D /* Images.xcassets */,
-				F28A843E1A40A31700134F6D /* LaunchScreen.xib */,
 				F28A842F1A40A31700134F6D /* Supporting Files */,
 			);
 			path = EventTracker;
@@ -288,7 +285,6 @@
 			files = (
 				F28A843B1A40A31700134F6D /* Main.storyboard in Resources */,
 				F2AC94901A41F6BB0097E595 /* EventsData.json in Resources */,
-				F28A84401A40A31700134F6D /* LaunchScreen.xib in Resources */,
 				F28A843D1A40A31700134F6D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,14 +341,6 @@
 				F28A843A1A40A31700134F6D /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		F28A843E1A40A31700134F6D /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F28A843F1A40A31700134F6D /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -440,7 +428,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = EventTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -450,7 +440,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = EventTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -252,6 +252,7 @@
                         <outlet property="eventGrid" destination="IW7-6c-aEA" id="ey3-u3-A7J"/>
                         <outlet property="eventList" destination="Ip2-8O-yFD" id="szv-xb-TLr"/>
                         <segue destination="2bz-dt-Pfw" kind="show" identifier="detail" id="qbR-Q9-7oq"/>
+                        <segue destination="zDM-wm-vnQ" kind="show" identifier="tracked" id="x0Q-KW-qOf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oZ8-Vb-PTN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -374,7 +375,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="121" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="V0t-Nf-cvW">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="216" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="V0t-Nf-cvW">
                                 <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -501,4 +502,7 @@
         <image name="Logo" width="300" height="150"/>
         <image name="Placeholder" width="369" height="369"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="x0Q-KW-qOf"/>
+    </inferredMetricsTieBreakers>
 </document>
