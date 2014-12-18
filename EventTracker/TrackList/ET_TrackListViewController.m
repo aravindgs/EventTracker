@@ -11,6 +11,7 @@
 #import "ET_EventObject.h"
 #import "ET_EventsTableViewCell.h"
 #import "AppDelegate.h"
+#import "ET_DetailEventViewController.h"
 
 
 @interface ET_TrackListViewController () <UITableViewDataSource,UITableViewDelegate>
@@ -129,6 +130,11 @@
 - (UIView *) tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     return [UIView new];
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"detailed" sender:[user.trackingEvents objectAtIndex:indexPath.row]];
 }
 
 - (void) untrackEvent : (UIButton *) deleteButton
@@ -254,6 +260,16 @@
     if (start.x/self.view.frame.size.width < 0.1)
     {
         [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"detailed"])
+    {
+        ET_DetailEventViewController *detail = [[ET_DetailEventViewController alloc] init];
+        detail = [segue destinationViewController];
+        detail.currentEvent = sender;
     }
 }
 

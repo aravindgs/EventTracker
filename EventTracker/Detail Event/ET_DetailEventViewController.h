@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "ET_EventObject.h"
 
+@class ET_TrackListViewController;
+
 @interface ET_DetailEventViewController : UIViewController
 
 @property (nonatomic) ET_EventObject *currentEvent;

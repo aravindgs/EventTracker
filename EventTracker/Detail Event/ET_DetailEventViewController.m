@@ -9,6 +9,7 @@
 #import "ET_DetailEventViewController.h"
 #import "AppDelegate.h"
 #import "ET_UserObject.h"
+#import "ET_TrackListViewController.h"
 
 @interface ET_DetailEventViewController ()
 {
@@ -104,7 +105,6 @@
         [user.trackingEvents addObject:_currentEvent];
         [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:user.trackingEvents] forKey:user.name];
         [[[UIAlertView alloc] initWithTitle:@"EVENT ADDED" message:@"This event has been added to your tracking list" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
-        [self performSegueWithIdentifier:@"tracked" sender:nil];
     }
 }
 
@@ -113,7 +113,17 @@
     CGPoint start = [swipe locationInView:self.view];
     if (start.x/self.view.frame.size.width > 0.9)
     {
-        [self performSegueWithIdentifier:@"tracked" sender:nil];
+        
+        UIViewController *prev = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count-2];
+        if ([prev isKindOfClass:[ET_TrackListViewController class]])
+        {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        else
+        {
+            [self performSegueWithIdentifier:@"tracked" sender:nil];
+        }
+        
     }
 }
 

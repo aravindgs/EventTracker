@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oHn-HJ-KoP">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -268,7 +269,7 @@
                         <viewControllerLayoutGuide type="bottom" id="qU6-ra-RID"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="faH-Ww-RSq">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="mqq-An-P2r">
@@ -337,7 +338,7 @@
                         <constraints>
                             <constraint firstItem="9cB-qo-R8T" firstAttribute="top" secondItem="mqq-An-P2r" secondAttribute="bottom" constant="35" id="7vU-YV-ySn"/>
                             <constraint firstAttribute="centerX" secondItem="9cB-qo-R8T" secondAttribute="centerX" id="8dT-g6-n2z"/>
-                            <constraint firstItem="mqq-An-P2r" firstAttribute="top" secondItem="FLM-Gp-7Q3" secondAttribute="bottom" constant="26" id="Fb9-e1-ZAh"/>
+                            <constraint firstItem="mqq-An-P2r" firstAttribute="top" secondItem="FLM-Gp-7Q3" secondAttribute="bottom" constant="90" id="Fb9-e1-ZAh"/>
                             <constraint firstItem="lG2-he-iUV" firstAttribute="top" secondItem="Obk-PM-QOG" secondAttribute="bottom" constant="38" id="LnF-92-58S"/>
                             <constraint firstAttribute="centerX" secondItem="mqq-An-P2r" secondAttribute="centerX" id="Pga-2F-pQV"/>
                             <constraint firstItem="Obk-PM-QOG" firstAttribute="leading" secondItem="faH-Ww-RSq" secondAttribute="leadingMargin" constant="157" id="SL9-c2-gN8"/>
@@ -350,6 +351,8 @@
                             <constraint firstItem="Obk-PM-QOG" firstAttribute="top" secondItem="FEj-04-01D" secondAttribute="bottom" constant="20" id="vgT-29-Ju5"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="entryAmount" destination="FEj-04-01D" id="zl0-ip-itU"/>
                         <outlet property="entryType" destination="ntq-xZ-hwe" id="eE6-KY-dLw"/>
@@ -361,7 +364,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0p2-2w-vQR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2917" y="296"/>
+            <point key="canvasLocation" x="3909" y="-216"/>
         </scene>
         <!--Track List View Controller-->
         <scene sceneID="K7Q-td-neR">
@@ -372,11 +375,11 @@
                         <viewControllerLayoutGuide type="bottom" id="9RO-Zk-7p8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wLp-bl-zU0">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="216" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="V0t-Nf-cvW">
-                                <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="tracked" rowHeight="216" id="vN2-wN-VlO" customClass="ET_EventsTableViewCell">
@@ -473,6 +476,7 @@
                     </view>
                     <connections>
                         <outlet property="trackTable" destination="V0t-Nf-cvW" id="RYd-CE-xhL"/>
+                        <segue destination="2bz-dt-Pfw" kind="show" identifier="detailed" id="spY-rM-mSF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wbq-oP-75N" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -503,6 +507,7 @@
         <image name="Placeholder" width="369" height="369"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="x0Q-KW-qOf"/>
+        <segue reference="spY-rM-mSF"/>
+        <segue reference="LEe-n1-YgG"/>
     </inferredMetricsTieBreakers>
 </document>
