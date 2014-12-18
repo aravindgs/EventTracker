@@ -28,6 +28,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     user = [ET_UserObject getInstance];
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -87,7 +90,6 @@
         [_nameField becomeFirstResponder];
     }
 }
-
 
 #pragma mark
 #pragma mark TEXTFIELD DELEGATES

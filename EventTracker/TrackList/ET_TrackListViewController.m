@@ -17,6 +17,7 @@
 {
     AppDelegate *appDelegate;
     ET_UserObject *user;
+    UISwipeGestureRecognizer *leftEndSwipe;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *trackTable;
@@ -28,6 +29,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    leftEndSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwiped:)];
+    [leftEndSwipe setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.view addGestureRecognizer:leftEndSwipe];
     appDelegate = [[UIApplication sharedApplication] delegate];
     user = [ET_UserObject getInstance];
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressGestureRecognized:)];
@@ -242,6 +246,15 @@
     snapshot.layer.shadowOpacity = 0.4;
     
     return snapshot;
+}
+
+- (void) rightSwiped : (UISwipeGestureRecognizer *) swipe
+{
+    CGPoint start = [swipe locationInView:self.view];
+    if (start.x/self.view.frame.size.width < 0.1)
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 @end

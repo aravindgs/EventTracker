@@ -35,6 +35,9 @@
     self.navigationItem.hidesBackButton = YES;
     _appDelegate = [[UIApplication sharedApplication] delegate];
     user = [ET_UserObject getInstance];
+    rightEndSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwiped:)];
+    [rightEndSwipe setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [self.view addGestureRecognizer:rightEndSwipe];
     NSDictionary *eventsDataDictionary = [NSDictionary dictionaryWithDictionary:[self getEventListDictionary]];
     NSArray *eventDictionariesArray = [NSArray arrayWithArray:[eventsDataDictionary valueForKey:@"events"]];
     _eventObjectsArray = [[NSMutableArray alloc] init];
@@ -54,6 +57,20 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     self.title = @"EVENTS";
+}
+
+- (void)viewWillLayoutSubviews;
+{
+    [super viewWillLayoutSubviews];
+    UICollectionViewFlowLayout *flowLayout = (id)self.eventGrid.collectionViewLayout;
+    float cellWidth = (_eventGrid.frame.size.width-30)/2;
+    if (UIDeviceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
+        flowLayout.itemSize = CGSizeMake(cellWidth, cellWidth);
+    } else {
+        flowLayout.itemSize = CGSizeMake(cellWidth, cellWidth);
+    }
+    
+    [flowLayout invalidateLayout]; //force the elements to get laid out again with the new size
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -239,6 +256,16 @@
         _eventList.hidden = YES;
     }
 }
+
+- (void) leftSwiped : (UISwipeGestureRecognizer *) swipe
+{
+    CGPoint start = [swipe locationInView:self.view];
+    if (start.x/self.view.frame.size.width > 0.9)
+    {
+        [self performSegueWithIdentifier:@"tracked" sender:nil];
+    }
+}
+
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

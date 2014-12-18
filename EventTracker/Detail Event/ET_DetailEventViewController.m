@@ -30,6 +30,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    rightEndSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwiped:)];
+    [rightEndSwipe setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [self.view addGestureRecognizer:rightEndSwipe];
     user = [ET_UserObject getInstance];
     _appDelegate = [[UIApplication sharedApplication] delegate];
     UIImage *image = [_appDelegate.imageCache objectForKey:_currentEvent.eventImageUrl];
@@ -101,6 +104,15 @@
         [user.trackingEvents addObject:_currentEvent];
         [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:user.trackingEvents] forKey:user.name];
         [[[UIAlertView alloc] initWithTitle:@"EVENT ADDED" message:@"This event has been added to your tracking list" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+        [self performSegueWithIdentifier:@"tracked" sender:nil];
+    }
+}
+
+- (void) leftSwiped : (UISwipeGestureRecognizer *) swipe
+{
+    CGPoint start = [swipe locationInView:self.view];
+    if (start.x/self.view.frame.size.width > 0.9)
+    {
         [self performSegueWithIdentifier:@"tracked" sender:nil];
     }
 }
